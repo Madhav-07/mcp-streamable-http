@@ -216,17 +216,17 @@ export class MCPServer {
 
     setToolSchema();
 
-    // set tools dynamically, changing 5 second
-    this.toolInterval = setInterval(async () => {
-      setToolSchema();
-      // to notify client that the tool changed
-      Object.values(this.transports).forEach((transport) => {
-        const notification: ToolListChangedNotification = {
-          method: "notifications/tools/list_changed",
-        };
-        this.sendNotification(transport, notification);
-      });
-    }, 60000);
+    // // set tools dynamically, changing 5 second
+    // this.toolInterval = setInterval(async () => {
+    //   setToolSchema();
+    //   // to notify client that the tool changed
+    //   Object.values(this.transports).forEach((transport) => {
+    //     const notification: ToolListChangedNotification = {
+    //       method: "notifications/tools/list_changed",
+    //     };
+    //     this.sendNotification(transport, notification);
+    //   });
+    // }, 60000);
 
     // handle tool calls
     this.server.setRequestHandler(
