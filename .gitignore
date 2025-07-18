@@ -6,6 +6,7 @@ __pycache__/
 dist/
 wheels/
 *.egg-info
+.env
 
 # Node-generated files
 node_modules/

@@ -5,6 +5,16 @@ import { MCPServer } from "./server.js";
 // Default port
 let PORT = 8080;
 
+// Load environment variables from .env file
+import dotenv from "dotenv";
+dotenv.config();
+
+// Check for environment variable
+if (!process.env.REQUIRED_ENV_VAR) {
+  console.error("REQUIRED_ENV_VAR is not set in the environment.");
+  process.exit(1);
+}
+
 // Parse command-line arguments for --port=XXXX
 for (let i = 2; i < process.argv.length; i++) {
   const arg = process.argv[i];
@@ -43,10 +53,12 @@ const router = express.Router();
 const MCP_ENDPOINT = "/mcp";
 
 router.post(MCP_ENDPOINT, async (req: Request, res: Response) => {
+  console.log("Received POST request on MCP endpoint");
   await server.handlePostRequest(req, res);
 });
 
 router.get(MCP_ENDPOINT, async (req: Request, res: Response) => {
+  console.log("Received GET request on MCP endpoint");
   await server.handleGetRequest(req, res);
 });
 
