@@ -1,9 +1,18 @@
 import express, { Request, Response } from "express";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { MCPServer } from "./server.js";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Default port
 let PORT = process.env.PORT || 8080;
+
+if(process.env.REQUIRED_ENV_VAR === undefined) {
+  console.error("REQUIRED_ENV_VAR is not set in the environment");
+  process.exit(1);
+}
 
 // Parse command-line arguments for --port=XXXX
 for (let i = 2; i < process.argv.length; i++) {
