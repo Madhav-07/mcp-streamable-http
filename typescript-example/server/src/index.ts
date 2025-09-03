@@ -3,7 +3,7 @@ import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { MCPServer } from "./server.js";
 
 // Default port
-let PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 8085;
 
 // Parse command-line arguments for --port=XXXX
 for (let i = 2; i < process.argv.length; i++) {
