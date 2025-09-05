@@ -7,10 +7,6 @@
   "bin": {
     "create-mcp-server": "./build/index.js"
   },
-  "scripts": {
-    "build": "tsc",
-    "start": "node build/index.js"
-  },
   "files": [
     "build"
   ],
