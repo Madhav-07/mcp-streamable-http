@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "bin": {
-    "create-mcp-server": "./build/index.js"
-  },
   "files": [
     "build"
   ],
