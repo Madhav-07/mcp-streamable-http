@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Default port
-let PORT = process.env.PORT || 8080;
+let PORT = process.env.MCP_PORT || 9090;
 
 if(process.env.REQUIRED_ENV_VAR === undefined) {
   console.error("REQUIRED_ENV_VAR is not set in the environment");
